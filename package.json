@@ -1,0 +1,22 @@
+{
+  "name": "8.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sever.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node sever.js",
+    "dev": "nodemon sever.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
