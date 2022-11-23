@@ -8,13 +8,14 @@ const { read,write } = require('./utils/model.js')
 const Express = require('./lib/expres')
 
 
-
+const PORT = process.env.PORT || 5000
 
 function httpServer(req, res) {
     const app = new Express(req, res)
 
 
     app.get('/yangilik', (req, res) => {
+        res.setHeader('Access-Control-Allow-origin','*')
         let {age,title} =req.query
         let yangilikla = read('yangilik').filter(yangilik => delete yangilik.userkod)
        let filterage= yangilikla.filter(yangilik => yangilik.age == age)
@@ -88,4 +89,4 @@ function httpServer(req, res) {
 
 
 const server = http.createServer(httpServer)
-server.listen(5000, () => console.log('servddr ok'))
+server.listen(PORT, () => console.log('servddr ok'))
